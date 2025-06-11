@@ -1,0 +1,169 @@
+.pageContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between sections */
+}
+
+.pageTitle {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.settingsSection {
+  background-color: #f9f9f9;
+  padding: 25px; /* Slightly more padding for settings sections */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sectionTitle {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 0; /* Remove top margin if it's the first element in section */
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Profile Form Styles */
+.profileForm {
+  display: flex;
+  gap: 30px; /* Space between avatar and details */
+  align-items: flex-start; /* Align avatar and details to the top */
+}
+
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 150px; /* Ensure space for avatar */
+}
+
+.avatarPreview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.avatarUploadInput {
+  display: none; /* Hide the actual input */
+}
+
+.avatarUploadLabel {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+.avatarUploadLabel:hover {
+  background-color: #0056b3;
+}
+
+.profileDetails {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form fields and button */
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formField label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Password Form Styles */
+.passwordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px; /* Limit width of password form */
+}
+
+/* Success and Error Messages */
+.successMessage {
+  color: #28a745; /* Green */
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.errorMessage {
+  color: #dc3545; /* Red */
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+/* Roles & Permissions Table */
+.rolesTableContainer {
+  overflow-x: auto; /* For smaller screens if table is wide */
+}
+.rolesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.rolesTable th,
+.rolesTable td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.95em;
+}
+.rolesTable th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+.rolesTable td:first-child { /* Role name */
+  font-weight: 500;
+}
+
+
+.placeholderText {
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Logout Button */
+.logoutButton {
+  background-color: #dc3545; /* Red for logout */
+  color: white;
+  /* Add other styles if Button component defaults aren't sufficient */
+}
+.logoutButton:hover:not(:disabled) {
+  background-color: #c82333;
+}
+.logoutDescription {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+  .profileForm {
+    flex-direction: column;
+    align-items: center; /* Center avatar on smaller screens */
+  }
+  .avatarSection {
+    margin-bottom: 20px;
+  }
+  .profileDetails {
+    width: 100%; /* Allow profile details to take full width */
+  }
+}

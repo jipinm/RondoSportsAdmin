@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  height: 60px; /* Fixed height for the header */
+}
+
+.logo span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userRole {
+  margin-right: 15px;
+  font-style: italic;
+}
+
+/* Basic styling for a potential user profile image or icon if added later */
+.userProfileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #555; /* Placeholder */
+  margin-right: 10px;
+}

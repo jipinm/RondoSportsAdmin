@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+}
+
+.loginForm {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjusted gap for tighter packing with error messages */
+}
+
+.loginForm h2 {
+  text-align: center;
+  margin-bottom: 15px; /* Adjusted margin */
+  color: #333;
+}
+
+.errorSummary {
+  color: #dc3545; /* Bootstrap danger color */
+  background-color: #f8d7da; /* Light red background */
+  border: 1px solid #f5c6cb; /* Reddish border */
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.errorField {
+  color: #dc3545; /* Bootstrap danger color */
+  font-size: 0.85em;
+  margin-top: -5px; /* Pull message closer to the input */
+  margin-bottom: 5px; /* Add a little space before the next element */
+}

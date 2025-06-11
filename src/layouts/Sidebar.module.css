@@ -1,0 +1,73 @@
+.sidebar {
+  width: 250px;
+  background-color: var(--color-background-light);
+  padding: var(--spacing-md);
+  height: calc(100vh - 60px); /* Assuming header is 60px fixed */
+  overflow-y: auto;
+  border-right: 1px solid var(--color-border);
+  transition: width 0.3s ease; /* For potential future toggle */
+  flex-shrink: 0; /* Prevent sidebar from shrinking if content is too wide */
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  margin-bottom: var(--spacing-sm);
+}
+
+.navLink {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  color: var(--color-text);
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover,
+.navLink.active {
+  background-color: var(--color-primary);
+  color: var(--color-background); /* White text on primary background */
+}
+
+/* Responsive adjustments for Sidebar */
+@media (max-width: 768px) { /* Tablet and smaller - when MainLayout stacks them */
+  .sidebar {
+    width: 100%; /* Take full width */
+    height: auto; /* Adjust height to content, or set a max-height */
+    max-height: 40vh; /* Example: limit height and allow scrolling for nav links */
+    border-right: none; /* No right border when stacked */
+    border-bottom: 1px solid var(--color-border); /* Border at the bottom */
+    /* overflow-y: auto; is already set */
+  }
+
+  .navList {
+    display: flex; /* Arrange nav items in a row */
+    flex-wrap: wrap; /* Allow wrapping if too many items */
+    gap: var(--spacing-sm); /* Space between items */
+  }
+
+  .navItem {
+    margin-bottom: 0; /* Remove bottom margin as gap is used */
+    flex-grow: 1; /* Allow items to grow and fill space */
+    min-width: 120px; /* Minimum width for each nav item */
+  }
+  .navLink {
+    text-align: center; /* Center text for a button-like appearance */
+  }
+}
+
+@media (max-width: 480px) { /* Mobile specific adjustments for navList */
+    .navList {
+        flex-direction: column; /* Stack nav items vertically on very small screens */
+        max-height: 200px; /* Or some other fixed height */
+        overflow-y: auto;
+    }
+    .sidebar {
+        max-height: 250px; /* Adjust overall sidebar max height */
+    }
+}

@@ -1,0 +1,108 @@
+.pageContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageTitle {
+  font-size: 1.8em;
+  color: #333;
+}
+
+/* Filter Controls Styling */
+.filterControlsContainer {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filterLabel {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #333;
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em;
+  min-width: 200px;
+  background-color: white;
+}
+
+.filterSelect:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Action Buttons in Table */
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.approveButton {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+.approveButton:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.rejectButton {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+.rejectButton:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.noActions {
+  color: #6c757d; /* Grey text for "No actions" */
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+
+/* Status Badge Styles */
+.statusBadge {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+}
+
+.statusPending {
+  background-color: #ffc107; /* Yellow */
+  color: #333;
+}
+
+.statusApproved {
+  background-color: #28a745; /* Green */
+}
+
+.statusRejected {
+  background-color: #dc3545; /* Red */
+}

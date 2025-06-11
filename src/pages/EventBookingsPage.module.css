@@ -1,0 +1,123 @@
+.pageContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageTitle {
+  font-size: 1.8em;
+  color: #333;
+}
+
+.filterControls {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filterLabel {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #333;
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em;
+  min-width: 200px;
+  background-color: white;
+}
+
+.filterSelect:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Action Buttons in Table */
+.actionButtons {
+  display: flex;
+  gap: 8px; /* Space between action buttons */
+}
+
+/* Specific styles for action buttons if needed */
+.cancelButton {
+  background-color: #ffc107; /* Yellow, for caution */
+  color: #333;
+}
+.cancelButton:hover:not(:disabled) {
+  background-color: #e0a800;
+}
+
+.refundButton {
+  background-color: #17a2b8; /* Info blue/teal */
+  color: white;
+}
+.refundButton:hover:not(:disabled) {
+  background-color: #117a8b;
+}
+
+
+/* Status Badge Styles */
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+}
+
+.statusConfirmed {
+  background-color: #28a745;
+}
+
+.statusCancelled {
+  background-color: #dc3545;
+}
+
+.statusRefunded {
+  background-color: #6c757d;
+}
+
+.statusPending {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalContent p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.modalContent strong {
+  color: #333;
+  margin-right: 5px;
+}

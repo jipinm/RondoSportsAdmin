@@ -1,0 +1,14 @@
+/* src/App.css */
+/*
+  Any styles specific to the App component's immediate layout can go here.
+  However, most global styles are now in src/index.css.
+  Component-specific styles are in their respective CSS Modules.
+  This file can be kept minimal or empty if App.tsx doesn't need unique global styling.
+*/
+
+/* Example: If App component itself had a specific layout structure not part of MainLayout */
+/* .app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} */

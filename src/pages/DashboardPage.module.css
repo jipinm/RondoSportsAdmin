@@ -1,0 +1,105 @@
+.dashboardContainer {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.dashboardTitle {
+  font-size: var(--font-size-h2); /* Use CSS variable */
+  color: var(--color-text);
+  margin-bottom: 0; /* Gap from container is enough */
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly wider minmax */
+  gap: var(--spacing-md);
+}
+
+.mainContentAreas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.topEventsSection,
+.bookingsChartSection {
+  /* Specific styles if needed */
+}
+
+.topEventsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topEventsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+}
+
+.topEventsItem:last-child {
+  border-bottom: none;
+}
+
+.topEventsItem span {
+  color: var(--color-text-muted);
+}
+
+.bookingCount {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.chartContainer {
+  width: 100%;
+  height: 300px;
+  padding-top: var(--spacing-sm);
+  /* Ensure chart elements use appropriate fonts/colors if not inheriting */
+}
+.chartContainer text { /* Example: Target Recharts text elements if needed */
+    fill: var(--color-text-muted) !important; /* May need !important for Recharts */
+    font-size: var(--font-size-sm) !important;
+}
+
+
+.dailyBookingsChartSection {
+  /* Full width by default */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) { /* Larger tablets / small desktops */
+    .mainContentAreas {
+        grid-template-columns: 1fr; /* Stack top events and main chart earlier */
+    }
+}
+
+
+@media (max-width: 768px) {
+  .summaryCards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .dashboardContainer {
+    padding: var(--spacing-sm);
+  }
+  .chartContainer {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .summaryCards {
+    grid-template-columns: 1fr;
+  }
+  .mainContentAreas {
+    gap: var(--spacing-sm);
+  }
+  .chartContainer {
+    height: 220px; /* Further adjust height */
+  }
+}
