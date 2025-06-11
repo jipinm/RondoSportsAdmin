@@ -1,0 +1,95 @@
+.pageContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.pageTitle {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.reportSection {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
+}
+
+/* Filter Controls Styling (similar to other pages) */
+.filterControlsContainer {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  background-color: #ffffff; /* White background for filters within section */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Space before the table */
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filterLabel {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #333;
+}
+
+.filterSelect,
+.filterInput { /* Style for date input */
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em;
+  min-width: 200px;
+  background-color: white;
+  box-sizing: border-box; /* Ensure padding doesn't expand width */
+}
+
+.filterSelect:focus,
+.filterInput:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.noDataMessage {
+    text-align: center;
+    padding: 15px;
+    font-style: italic;
+    color: #666;
+}
+
+.placeholderText {
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Table specific styling for reports page if Table.module.css isn't enough */
+/* For instance, if the table here needs a different presentation */
+/* .reportSection .tableContainer { ... } */
+
+/* Ensure buttons in sectionHeader are aligned properly */
+.sectionHeader button {
+  /* Add specific styles if Button component defaults aren't perfect here */
+}

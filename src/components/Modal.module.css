@@ -1,0 +1,91 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.55); /* Slightly adjusted opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: var(--spacing-md);
+}
+
+.modalPanel {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-lg); /* Larger radius */
+  box-shadow: var(--box-shadow-lg); /* More prominent shadow */
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
+  width: 100%; /* Start with full width, let size classes control max-width */
+}
+
+/* Sizes for the modal panel */
+.sm { max-width: 400px; }
+.md { max-width: 600px; } /* Default size */
+.lg { max-width: 800px; }
+.xl { max-width: 1000px; }
+
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: var(--font-size-h5); /* Use h5 size */
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  line-height: 1;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: var(--color-text);
+}
+
+.modalBody {
+  padding: var(--spacing-lg);
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.modalFooter {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+/* Responsive adjustments for modal panel */
+@media (max-width: 576px) {
+  .overlay {
+    padding: var(--spacing-sm); /* Reduce padding on very small screens */
+  }
+  .modalPanel {
+    /* max-width will still be controlled by size classes, but this ensures it doesn't exceed screen */
+    max-height: 95vh; /* Allow a bit more height on small screens */
+  }
+  .modalHeader, .modalBody, .modalFooter {
+    padding: var(--spacing-md); /* Consistent padding for modal sections on small screens */
+  }
+  .modalTitle {
+    font-size: var(--font-size-h6); /* Slightly smaller title on mobile */
+  }
+}

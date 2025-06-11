@@ -1,0 +1,137 @@
+.pageContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageTitle {
+  font-size: 1.8em;
+  color: #333;
+}
+
+/* Filter Controls Styling */
+.filterControlsContainer { /* Renamed from filterControls to avoid conflict if merging styles later */
+  display: flex;
+  gap: 20px; /* Space between different filter groups */
+  padding: 15px;
+  background-color: #f8f9fa; /* Light background for the filter area */
+  border-radius: 8px;
+  /* margin-bottom: 0px; */ /* Align with tableWrapper gap from Table.module.css */
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column; /* Stack label on top of select/input */
+  gap: 5px;
+}
+
+.filterLabel {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #333;
+}
+
+.filterSelect {
+  padding: 8px 12px; /* Adjusted padding to match EventBookingsPage */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em; /* Adjusted font size */
+  min-width: 200px; /* Give select some width */
+  background-color: white;
+}
+
+.filterSelect:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+/* Action Buttons in Table */
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.deactivateButton {
+  background-color: #dc3545; /* Red for destructive action */
+  color: white;
+}
+.deactivateButton:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+/* Status Badge Styles */
+.statusBadge {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+}
+
+.statusActive {
+  background-color: #28a745; /* Green */
+}
+
+.statusInactive {
+  background-color: #ffc107; /* Yellow */
+  color: #333;
+}
+
+.statusDeactivated {
+  background-color: #6c757d; /* Grey */
+}
+
+/* Modal Form Styles */
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formField label {
+  font-weight: 500;
+  color: #333;
+}
+
+.formSelect { /* Reusing style from EventBookingsPage for consistency */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+}
+.formSelect:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}

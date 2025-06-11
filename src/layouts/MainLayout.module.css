@@ -1,0 +1,33 @@
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: var(--spacing-md); /* Use CSS variable */
+  overflow-y: auto;
+  background-color: var(--color-background);
+}
+
+/* Responsive adjustments for MainLayout */
+@media (max-width: 768px) { /* Tablet and smaller */
+  .contentWrapper {
+    flex-direction: column;
+    overflow-y: auto; /* Allow content wrapper to scroll if sidebar + main content > screen height */
+  }
+
+  /* Sidebar will be handled by its own module for width/height adjustments */
+  .mainContent {
+    padding: var(--spacing-sm); /* Reduce padding on smaller screens */
+    /* flex-grow is still 1, it will take available space in column direction */
+  }
+}
