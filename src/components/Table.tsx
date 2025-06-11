@@ -1,21 +1,36 @@
 import React, { useState, useMemo } from 'react';
 import styles from './Table.module.css';
-import Button from './Button'; // Assuming a general Button component is available
+import Button from './Button';
 
-export interface ColumnDefinition<T> {
-  key: keyof T | string;
+// Utility to get nested properties
+const getNestedValue = (obj: any, path: string): any => {
+  if (!path) return undefined;
+  const keys = path.split('.');
+  let result = obj;
+  for (const key of keys) {
+    if (result && typeof result === 'object' && key in result) {
+      result = result[key];
+    } else {
+      return undefined; // Path does not exist
+    }
+  }
+  return result;
+};
+
+export interface ColumnDefinition<T extends Record<string, any>> { // T must be an object type
+  key: string; // Using string for flexibility (e.g., 'user.name' or 'id')
   header: string;
   render?: (item: T) => React.ReactNode;
 }
 
-interface TableProps<T> {
+interface TableProps<T extends Record<string, any>> { // T must be an object type
   columns: ColumnDefinition<T>[];
   data: T[];
   onRowClick?: (item: T) => void;
   rowsPerPage?: number;
 }
 
-const Table = <T extends { [key: string]: any }>({
+const Table = <T extends Record<string, any>>({
   columns,
   data,
   onRowClick,
@@ -46,20 +61,22 @@ const Table = <T extends { [key: string]: any }>({
           <thead>
             <tr>
               {columns.map((col) => (
-                <th key={String(col.key)}>{col.header}</th>
+                <th key={col.key}>{col.header}</th> {/* col.key is now always string */}
               ))}
             </tr>
           </thead>
           <tbody>
             {currentTableData.map((item, rowIndex) => (
               <tr
-                key={item.id || rowIndex}
+                key={item.id || rowIndex} // Assuming items might have an 'id' property
                 onClick={() => onRowClick && onRowClick(item)}
                 className={onRowClick ? styles.clickableRow : ''}
               >
                 {columns.map((col) => (
-                  <td key={`${String(col.key)}-${item.id || rowIndex}`}>
-                    {col.render ? col.render(item) : String(item[col.key as keyof T] ?? '')}
+                  <td key={`${col.key}-${item.id || rowIndex}`}>
+                    {col.render
+                      ? col.render(item)
+                      : String(getNestedValue(item, col.key) ?? '')} {/* Use getNestedValue */}
                   </td>
                 ))}
               </tr>
@@ -75,7 +92,7 @@ const Table = <T extends { [key: string]: any }>({
         </table>
       </div>
 
-      {data.length > rowsPerPage && ( // Only show pagination if there's more than one page
+      {data.length > rowsPerPage && (
         <div className={styles.paginationControls}>
           <Button onClick={goToPreviousPage} disabled={currentPage === 1} variant="secondary">
             Previous
